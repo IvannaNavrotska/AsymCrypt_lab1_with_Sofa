@@ -11,7 +11,7 @@ def bibliot():
     return bay
 
 
-d=bibliot()
-print(d)
-bd=int.from_bytes(d, "big")
-print(bd)
+#d=bibliot()
+#print(d)
+#bd=int.from_bytes(d, "big")
+#print(bd)

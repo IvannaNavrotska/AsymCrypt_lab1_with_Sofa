@@ -19,4 +19,4 @@ def volfram(r:int):
 
 g = random.randint(1, pow(2, 32))
 c=int("".join(str(x) for x in volfram(g)), 2)
-print(int(c), g)
+#print(int(c), g)
