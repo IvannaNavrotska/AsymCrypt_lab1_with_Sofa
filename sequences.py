@@ -105,9 +105,10 @@ def sequence_from_bibliotekar():
 #генератор Вольфрама
 def sequence_from_wolfram():
 
-    g = random.randint(1, pow(2, 32))
+    
     wolfram_seq = []
-    for i in range(125000):                
+    for _ in range(125000):   
+        g = random.randint(1, pow(2, 32))             
         bits = volfram(g)               
         g = int("".join(str(b) for b in bits), 2)
         byte = int("".join(str(b) for b in bits[:8]), 2)
