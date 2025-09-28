@@ -6,7 +6,7 @@ a = 0.1   z = 118.5
 """
 
 import random
-
+from sequences import *
 
 def test1(y, z): #рівноімовірність знаків
 
@@ -142,13 +142,43 @@ def tests(alpha, seq=None, file=None):
     xi_2, xi2_lim = test3(data, z)
     print(f'xi_2 = {xi_2}, xi2_lim = {xi2_lim}')
     if xi_2 <= xi2_lim:
-        print("Гіпотеза H0 вірна, послідовність однорідна")
+        print("Гіпотеза H0 вірна, послідовність однорідна\n")
     else:
-        print("Гіпотеза H0 хибна, послідовність неоднорідна")
-    
+        print("Гіпотеза H0 хибна, послідовність неоднорідна\n")
 
-y = [random.randint(0, 255) for i in range(10000)]
-tests(0.05, y)
+   
+print('Тестування вбудованого генератора')
+tests(0.01, sequence_from_vbud())
 
-y2 = 'CEA42B987C44FA642D80AD9F51F10457690DEF10C83D0BC1BCEE12FC3B6093E3'
-tests(0.05, y2)
+print('Тестування генератора LehmerLow')
+tests(0.01, sequence_from_lehmerlow())
+
+print('Тестування генератора LehmerHigh')
+tests(0.01, sequence_from_lehmerhigh())
+
+print('Тестування генератора L20')
+tests(0.01, sequence_from_l20())
+
+print('Тестування генератора L89')
+tests(0.01, sequence_from_l89())
+
+print('Тестування генератора Geffe')
+tests(0.01, sequence_from_geffe())
+
+print('Тестування генератора «Бібліотекар»')
+tests(0.01, sequence_from_bibliotekar())
+
+print('Тестування генератора Вольфрама')
+tests(0.01, sequence_from_wolfram())
+
+print('Тестування генератора Блюма-Мікалі BM')
+tests(0.01, sequence_from_bm())
+
+print('Тестування генератора BM_bytes')
+tests(0.01, sequence_from_bm_bytes())
+
+print('Тестування генератора BBS')
+tests(0.01, sequence_from_bbs())
+
+print('Тестування генератора BBS_bytes')
+tests(0.01, sequence_from_bbs_bytes())

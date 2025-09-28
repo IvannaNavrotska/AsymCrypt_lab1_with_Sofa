@@ -63,6 +63,8 @@ def sequence_from_l20():
     c = int("".join(str(x) for x in l20()),2)
     hex_str = str(hex(c))
     c_ = hex_str[2:]
+    if len(c_) % 2 != 0:
+        c_ = '0' + c_ 
     c_bytes = bytes.fromhex(c_)
 
     l20_seq = list(c_bytes)
@@ -76,6 +78,8 @@ def sequence_from_l89():
     c = int("".join(str(x) for x in l89()),2)
     hex_str = str(hex(c))
     c_ = hex_str[2:]
+    if len(c_) % 2 != 0:
+        c_ = '0' + c_ 
     c_bytes = bytes.fromhex(c_)
 
     l89_seq = list(c_bytes)
@@ -89,6 +93,8 @@ def sequence_from_geffe():
     c=int("".join(str(x) for x in jiffi()), 2)
     hex_str = str(hex(c))
     c_ = hex_str[2:]
+    if len(c_) % 2 != 0:
+        c_ = '0' + c_ 
     c_bytes = bytes.fromhex(c_)
 
     geffe_seq = list(c_bytes)
