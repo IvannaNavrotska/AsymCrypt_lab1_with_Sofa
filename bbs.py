@@ -14,4 +14,4 @@ def bbs(p, q):
 p = int(0xD5BBB96D30086EC484EBA3D7F9CAEB07)
 q = int(0x425D2B9BFDB25B9CF6C416CC6E37B59C1F)
 c=int("".join(str(x) for x in bbs(p, q)), 2)
-print(hex(c)) 
+#print(hex(c)) 
