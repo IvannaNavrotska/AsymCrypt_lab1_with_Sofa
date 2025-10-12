@@ -2,13 +2,13 @@ import random
 
 def x11(k):
     x=[]
-    for _ in range(10):
+    for _ in range(11):
         x.append(random.randint(0, 1))
 
     if 1 not in x:
-        x[random.randint(0, 10)]=1
+        x[random.randint(0, 11)]=1
 
-    for t in range(10, k+10):
+    for t in range(11, k+11):
         
         x.append(x[t-11]^x[t-9])
 
@@ -16,7 +16,7 @@ def x11(k):
 
 def y9(k):
     y=[]
-    for _ in range(8):
+    for _ in range(9):
         y.append(random.randint(0, 1))
 
     if 1 not in y:
@@ -45,7 +45,7 @@ def s10(k):
 
 
 def jiffi():
-    k=random.randint(1000, pow(2, 20)-1)
+    k=125001
     x=x11(k)
     y=y9(k)
     s=s10(k)
@@ -61,4 +61,5 @@ def jiffi():
 
 
 c=int("".join(str(x) for x in jiffi()), 2)
+#print(c.bit_length())
 #print(hex(c)) #Ну дуже багато циферок виходить, прям рілі багато

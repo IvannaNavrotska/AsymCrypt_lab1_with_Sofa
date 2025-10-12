@@ -31,7 +31,7 @@ def sequence_from_lehmerlow():
     m=pow(2, 32)
     a=pow(2, 16)+1
     c=119
-    x0=random.randint(1, 1000)
+    x0=random.randint(1, 100000)
     
     while len(lehmerlow_seq) != 125000:
         elt = lehmerlow(a, c, m, x0)

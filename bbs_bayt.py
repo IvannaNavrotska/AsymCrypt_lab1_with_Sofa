@@ -2,7 +2,7 @@ import random
 
 def bbs_bytes(p, q):
     n=p*q
-    r=random.randint(2, pow(2, 32))
+    r=random.randint(2, n-1)
     x=[]
     for _ in range(32):
         f=r%256
