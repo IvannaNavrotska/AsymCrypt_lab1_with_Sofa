@@ -1,8 +1,7 @@
 """
-100 ступенів свободи
-a = 0.01  z = 135.8
-a = 0.05  z = 124.3
-a = 0.1   z = 118.5
+a = 0.01  z = 2.99
+a = 0.05  z = 1.64
+a = 0.1   z = 1.28
 """
 
 import random
@@ -109,11 +108,11 @@ def tests(alpha, seq=None, file=None):
             data = list(seq) 
 
     if alpha == 0.01:
-        z = 135.8
+        z = 2.99
     elif alpha == 0.05:
-        z = 124.3
+        z = 1.64
     elif alpha == 0.1:
-        z = 118.5
+        z = 1.28
 
         
     print(f'Довжина послідовності: {len(data)}')
@@ -148,37 +147,37 @@ def tests(alpha, seq=None, file=None):
 
    
 print('Тестування вбудованого генератора')
-tests(0.01, sequence_from_vbud())
+tests(0.1, sequence_from_vbud())
 
 print('Тестування генератора LehmerLow')
-tests(0.01, sequence_from_lehmerlow())
+tests(0.1, sequence_from_lehmerlow())
 
 print('Тестування генератора LehmerHigh')
-tests(0.01, sequence_from_lehmerhigh())
+tests(0.1, sequence_from_lehmerhigh())
 
 print('Тестування генератора L20')
-tests(0.01, sequence_from_l20())
+tests(0.1, sequence_from_l20())
 
 print('Тестування генератора L89')
-tests(0.01, sequence_from_l89())
+tests(0.1, sequence_from_l89())
 
 print('Тестування генератора Geffe')
-tests(0.01, sequence_from_geffe())
+tests(0.1, sequence_from_geffe())
 
 print('Тестування генератора «Бібліотекар»')
-tests(0.01, sequence_from_bibliotekar())
+tests(0.1, sequence_from_bibliotekar())
 
 print('Тестування генератора Вольфрама')
-tests(0.01, sequence_from_wolfram())
+tests(0.1, sequence_from_wolfram())
 
 print('Тестування генератора Блюма-Мікалі BM')
-tests(0.01, sequence_from_bm())
+tests(0.1, sequence_from_bm())
 
 print('Тестування генератора BM_bytes')
-tests(0.01, sequence_from_bm_bytes())
+tests(0.1, sequence_from_bm_bytes())
 
 print('Тестування генератора BBS')
-tests(0.01, sequence_from_bbs())
+tests(0.1, sequence_from_bbs())
 
 print('Тестування генератора BBS_bytes')
-tests(0.01, sequence_from_bbs_bytes())
+tests(0.1, sequence_from_bbs_bytes())

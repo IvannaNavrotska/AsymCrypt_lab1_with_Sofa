@@ -25,7 +25,7 @@ def sequence_from_vbud():
 
 #генератор LehmerLow
 def sequence_from_lehmerlow():
-
+    
     lehmerlow_seq = []
     
     m=pow(2, 32)
@@ -38,7 +38,6 @@ def sequence_from_lehmerlow():
         lehmerlow_seq.append(elt)
         
     return lehmerlow_seq
-
 
 #генератор LehmerHigh
 def sequence_from_lehmerhigh():
@@ -60,54 +59,70 @@ def sequence_from_lehmerhigh():
 #генератор L20
 def sequence_from_l20():
 
-    c = int("".join(str(x) for x in l20()),2)
-    hex_str = str(hex(c))
-    c_ = hex_str[2:]
-    if len(c_) % 2 != 0:
-        c_ = '0' + c_ 
-    c_bytes = bytes.fromhex(c_)
+    bits = l20()
+    
+    while len(bits) < 125000 * 8:
+        bits += l20()
+    
+    bits = bits[:125000 * 8]
 
-    l20_seq = list(c_bytes)
+    l20_seq = bytearray()
+    for i in range(0, len(bits), 8):
+        byte = 0
+        for b in bits[i:i+8]:
+            byte = (byte << 1) | b
+        l20_seq.append(byte)
 
-    return l20_seq
+    return bytes(l20_seq)
 
 
 #генератор L89
 def sequence_from_l89():
+    
+    bits = l89()
 
-    c = int("".join(str(x) for x in l89()),2)
-    hex_str = str(hex(c))
-    c_ = hex_str[2:]
-    if len(c_) % 2 != 0:
-        c_ = '0' + c_ 
-    c_bytes = bytes.fromhex(c_)
+    while len(bits) < 125000 * 8:
+        bits += l89()
+    bits = bits[:125000 * 8]
 
-    l89_seq = list(c_bytes)
+    l89_seq = bytearray()
+    for i in range(0, len(bits), 8):
+        byte = 0
+        for b in bits[i:i+8]:
+            byte = (byte << 1) | b
+        l89_seq.append(byte)
 
-    return l89_seq
+    return bytes(l89_seq)
 
 
 #генератор Джиффі (Geffe)
 def sequence_from_geffe():
+    
+    bits = jiffi()
 
-    c=int("".join(str(x) for x in jiffi()), 2)
-    hex_str = str(hex(c))
-    c_ = hex_str[2:]
-    if len(c_) % 2 != 0:
-        c_ = '0' + c_ 
-    c_bytes = bytes.fromhex(c_)
+    while len(bits) < 125000 * 8:
+        bits += jiffi()
+    bits = bits[:125000 * 8]
 
-    geffe_seq = list(c_bytes)
+    geffe_seq = bytearray()
+    for i in range(0, len(bits), 8):
+        byte = 0
+        for b in bits[i:i+8]:
+            byte = (byte << 1) | b
+        geffe_seq.append(byte)
 
-    return geffe_seq
+    return bytes(geffe_seq)
 
 
 #генератор «Бібліотекар»
 def sequence_from_bibliotekar():
+    
+    bibliotekar_seq = bytearray()
 
-    bibliotekar_seq = list(bibliot())
+    while len(bibliotekar_seq) < 125000:
+        bibliotekar_seq.extend(bibliot())
 
-    return bibliotekar_seq
+    return bytes(bibliotekar_seq[:125000])
 
 
 #генератор Вольфрама
@@ -123,6 +138,7 @@ def sequence_from_wolfram():
         wolfram_seq.append(byte)
         
     return wolfram_seq
+
 
 #генератор Блюма-Мікалі BM
 def sequence_from_bm():
