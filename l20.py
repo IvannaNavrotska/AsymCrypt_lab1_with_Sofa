@@ -1,6 +1,6 @@
 import random
 
-def l20():
+def l20(k):
     x=[]
     for _ in range(20):
         x.append(random.randint(0, 1))
@@ -8,7 +8,7 @@ def l20():
     if 1 not in x:
         x[random.randint(0, 20)]=1
     
-    k=random.randint(1000, pow(2, 20)-1)
+
 
     for t in range(20, k+20):
         

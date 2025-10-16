@@ -1,6 +1,6 @@
 import random
 
-def l89():
+def l89(k):
     x=[]
     for _ in range(89):
         x.append(random.randint(0, 1))
@@ -8,7 +8,7 @@ def l89():
     if 1 not in x:
         x[random.randint(0, 89)]=1
     
-    k=random.randint(1000, pow(2, 20)-1)
+    #k=random.randint(1000, pow(2, 20)-1)
 
     for t in range(89, k+89):
         

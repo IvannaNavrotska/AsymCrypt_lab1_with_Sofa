@@ -33,9 +33,8 @@ def sequence_from_lehmerlow():
     c=119
     x0=random.randint(1, 100000)
     
-    while len(lehmerlow_seq) != 125000:
-        elt = lehmerlow(a, c, m, x0)
-        lehmerlow_seq.append(elt)
+    lehmerlow_seq=lehmerlow(a, c, m, x0, 1000000)
+    
         
     return lehmerlow_seq
 
@@ -49,9 +48,7 @@ def sequence_from_lehmerhigh():
     c=119
     x0=random.randint(1, 1000)
     
-    while len(lehmerhigh_seq) != 125000:
-        elt = lehmerhigh(a, c, m, x0)
-        lehmerhigh_seq.append(elt)
+    lehmerhigh_seq=lehmerhigh(a, c, m, x0, 1000000)
         
     return lehmerhigh_seq
 
@@ -59,10 +56,8 @@ def sequence_from_lehmerhigh():
 #генератор L20
 def sequence_from_l20():
 
-    bits = l20()
+    bits = l20(1000000)
     
-    while len(bits) < 125000 * 8:
-        bits += l20()
     
     bits = bits[:125000 * 8]
 
@@ -79,10 +74,9 @@ def sequence_from_l20():
 #генератор L89
 def sequence_from_l89():
     
-    bits = l89()
+    bits = l89(1000000)
 
-    while len(bits) < 125000 * 8:
-        bits += l89()
+    
     bits = bits[:125000 * 8]
 
     l89_seq = bytearray()
