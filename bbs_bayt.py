@@ -1,10 +1,11 @@
 import random
 
-def bbs_bytes(p, q):
+def bbs_bytes(p, q, k):
+    #if k%32!=0
     n=p*q
     r=random.randint(2, n-1)
     x=[]
-    for _ in range(32):
+    for _ in range(k):
         f=r%256
         x.append(f)
         r=pow(r, 2, n)

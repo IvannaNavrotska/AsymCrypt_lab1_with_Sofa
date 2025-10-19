@@ -175,9 +175,8 @@ def sequence_from_bbs():
     q = int(0x425D2B9BFDB25B9CF6C416CC6E37B59C1F)
     
     bits = []
-    while len(bits) < 1000000:
-        bits.extend(bbs(p, q))
-    bits = bits[:1000000]
+    
+    bits = bbs(p, q, 1000000)
 
     bbs_seq = [int("".join(str(b) for b in bits[i:i+8]), 2) 
                  for i in range(0, len(bits), 8)]
@@ -191,8 +190,7 @@ def sequence_from_bbs_bytes():
     q = int(0x425D2B9BFDB25B9CF6C416CC6E37B59C1F)
     
     bbs_bytes_seq = []
-    while len(bbs_bytes_seq) < 125000:
-        b = bbs_bytes(p, q)
-        bbs_bytes_seq.extend(b)
+    
+    bbs_bytes_seq=bbs_bytes(p, q, 125000)
         
     return bbs_bytes_seq

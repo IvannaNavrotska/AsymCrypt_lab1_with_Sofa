@@ -1,18 +1,25 @@
 import random
 
-def bbs(p, q):
+def bbs(p, q, k):
+    if (k%32!=0):
+        return 0
     n=p*q
     r=random.randint(2, n-1)
     x=[]
-    for _ in range(32):
+    arr=[]
+    for _ in range(int(k/32)):
+     x=[]
+     for _ in range(32):
         f=r%2
         x.append(f)
         r=pow(r, 2, n)
+     arr.append(int("".join(str(i) for i in x), 2))
+    
 
-    return x
+    return arr
 
 p = int(0xD5BBB96D30086EC484EBA3D7F9CAEB07)
 q = int(0x425D2B9BFDB25B9CF6C416CC6E37B59C1F)
-c=int("".join(str(x) for x in bbs(p, q)), 2)
 
-#print(hex(c)) 
+
+print(bbs(p, q, 1000000)) 
