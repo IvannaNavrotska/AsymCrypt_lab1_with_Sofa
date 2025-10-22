@@ -143,8 +143,7 @@ def sequence_from_bm():
     bits = []
     total_bits = 125000 * 8
 
-    while len(bits) < total_bits:
-        bits.extend(bm(a, p))
+    bits=bm(a, p, total_bits)
 
     bm_seq = []
     for i in range(0, total_bits, 8):
@@ -161,9 +160,7 @@ def sequence_from_bm_bytes():
     a=int(0x5B88C41246790891C095E2878880342E88C79974303BD0400B090FE38A688356)
     
     bm_bytes_seq = []
-    while len(bm_bytes_seq) < 125000:
-        b = bm_bayts(a, p)
-        bm_bytes_seq.extend(b)
+    bm_bytes_seq=bm_bayts(a, p, 125000)
         
     return bm_bytes_seq
 

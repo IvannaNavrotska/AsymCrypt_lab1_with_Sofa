@@ -16,7 +16,7 @@ def bm(a, p, k):
         for _ in range(dlinna):
             t=pow(a, t, p)
             x.append(proverka_x(t, p))
-        arr.append(x)
+        arr.extend(x)
     return arr
 
 p=int(0xCEA42B987C44FA642D80AD9F51F10457690DEF10C83D0BC1BCEE12FC3B6093E3)

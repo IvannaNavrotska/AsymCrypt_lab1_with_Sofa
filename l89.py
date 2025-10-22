@@ -17,5 +17,5 @@ def l89(k):
 
     return x
 
-c=int("".join(str(x) for x in l89()),2)
+#c=int("".join(str(x) for x in l89()),2)
 #print(hex(c)) #Ну дуже багато циферок виходить, прям рілі багато

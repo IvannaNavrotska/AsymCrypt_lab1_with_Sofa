@@ -60,6 +60,6 @@ def jiffi():
 
 
 
-c=int("".join(str(x) for x in jiffi()), 2)
+#c=int("".join(str(x) for x in jiffi()), 2)
 #print(c.bit_length())
 #print(hex(c)) #Ну дуже багато циферок виходить, прям рілі багато

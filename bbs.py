@@ -13,7 +13,7 @@ def bbs(p, q, k):
         f=r%2
         x.append(f)
         r=pow(r, 2, n)
-     arr.append(int("".join(str(i) for i in x), 2))
+     arr.extend(x)
     
 
     return arr
@@ -22,4 +22,4 @@ p = int(0xD5BBB96D30086EC484EBA3D7F9CAEB07)
 q = int(0x425D2B9BFDB25B9CF6C416CC6E37B59C1F)
 
 
-print(bbs(p, q, 1000000)) 
+#print(bbs(p, q, 1000000)) 

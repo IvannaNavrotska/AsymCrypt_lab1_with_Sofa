@@ -36,5 +36,5 @@ a=pow(2, 16)+1
 c=119
 x0=random.randint(1, 1000)
 k=1000
-print(lehmerlow(a, c, m, x0, k))
+#print(lehmerlow(a, c, m, x0, k))
 
