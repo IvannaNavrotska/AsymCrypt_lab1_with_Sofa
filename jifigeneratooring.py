@@ -44,8 +44,8 @@ def s10(k):
 
 
 
-def jiffi():
-    k=125001
+def jiffi(k):
+   
     x=x11(k)
     y=y9(k)
     s=s10(k)

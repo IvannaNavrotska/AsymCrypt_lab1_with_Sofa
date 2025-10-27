@@ -92,11 +92,9 @@ def sequence_from_l89():
 #генератор Джиффі (Geffe)
 def sequence_from_geffe():
     
-    bits = jiffi()
+    bits = jiffi(125000)
 
-    while len(bits) < 125000 * 8:
-        bits += jiffi()
-    bits = bits[:125000 * 8]
+
 
     geffe_seq = bytearray()
     for i in range(0, len(bits), 8):
